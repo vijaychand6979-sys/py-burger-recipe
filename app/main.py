@@ -63,7 +63,7 @@ class OneOf(Validator):
     def __init__(
         self,
         options: List[str]
-    ) -> str:
+    ) -> None:
         self.options = options
 
     def validate(
@@ -73,7 +73,7 @@ class OneOf(Validator):
         if value not in self.options:
             raise ValueError(
                 f"Expected {value} to be one of "
-                f"{tuple(self.options)}."
+                f"{self.options}."
             )
 
         return value
